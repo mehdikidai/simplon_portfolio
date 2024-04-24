@@ -50,36 +50,60 @@
         justify-content: center;
         flex-direction: column;
         gap: $space * 1.5;
-        .photo_user{
-            background:#1a1a1a;
+        .photo_user {
+            background: #1a1a1a;
             position: relative;
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            overflow: hidden;
+            //overflow: hidden;
             border: 1px solid #242424;
-            img{
+            .photo_mask {
+                overflow: hidden;
+                //background: red;
+                border-radius: 50%;
+                height: 100%;
+                width: 100%;
+            }
+            img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 cursor: pointer;
+                transform: translateX(0);
+                transition: transform 0.3s ease-in-out;
             }
-            span{
+            span {
                 position: absolute;
-                top: -50px;
-                left: -50px;
+                top: 30px;
+                left: 30px;
+                z-index: -2;
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+            }
+            &:hover {
+                & img {
+                    transform: translateX(10px);
+                    
+                }
+
+                & span {
+                    opacity: 1;
+                    top: -10px;
+                    left: -10px;
+                }
             }
         }
         .name_user {
             display: flex;
             align-items: center;
-            gap:5px;
-            i{
+            gap: 5px;
+            i {
                 font-size: 18px;
                 transform: translateY(1px);
                 color: #fbf5b1;
             }
-            span{
+            span {
                 color: $gray;
                 font-size: 18px;
             }
@@ -91,7 +115,7 @@
                 font-size: 32px;
                 line-height: 1.2;
                 text-align: center;
-                @extend %text_gradient
+                @extend %text_gradient;
             }
         }
         button {
@@ -108,12 +132,12 @@
             color: $gray;
             cursor: pointer;
             border-radius: 6px;
-            i{
+            i {
                 font-size: 18px;
                 transform: translateY(1px);
-                transition: all .3s ease-in-out;
+                transition: all 0.3s ease-in-out;
             }
-            &:hover i{
+            &:hover i {
                 transform: translateY(1px) rotate(90deg);
             }
         }
