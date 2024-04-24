@@ -1,29 +1,61 @@
-.container_skills{
+.container_skills {
     width: 100%;
     height: 380px;
     //background: rgb(0, 204, 255);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: $space;
-    .sk{
+    .sk {
         background: #1a1a1a;
         border: 1px solid #242424;
         display: flex;
         align-items: start;
         justify-content: end;
         flex-direction: column;
-        padding: 45px 30px;
+        padding: 100px 30px 45px;
         gap: 16px;
         box-shadow: rgba(0, 0, 0, 0.05) 3px 0px 3px;
         transform: translateY(0);
         border-radius: 6px;
         cursor: pointer;
+        //background: red;
         transition: all 0.3s ease-in;
-        .icon{
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 55px;
-            aspect-ratio: 1;
-            background: red;
+            height: 55px;
+            background: rgba(159, 159, 159, 0.1);
             border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.05) 3px 0px 3px;
+            rotate: 0deg;
+            transition: all 0.2s linear;
+            svg{
+                transition: all 0.1s linear;
+                color: $gray;
+            }
+            
+        }
+        &:hover .icon{
+            rotate: 10deg;
+            svg{
+                color: #fbf5b1;
+            }
+        }
+        .tit {
+            font-size: 24px;
+            font-weight: 500;
+            color: #9f9f9f;
+            text-transform: capitalize;
+        }
+        .txt {
+            flex: 1 1 auto;
+            font-size: 16px;
+            text-align: left;
+            font-weight: 300;
+            color: $gray;
+            line-height: 1.4;
         }
     }
 }

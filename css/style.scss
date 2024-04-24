@@ -2,6 +2,7 @@
 @import "./cover";
 @import "./txt_tittle";
 @import "./container_skills";
+@import "./percent_skills";
 
 :root{
     --white-color: #fff;
@@ -30,7 +31,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 6px;
-    border: 1px solid #242424;
+    //border: 1px solid #242424;
     
     svg{
         //background: blue;
@@ -39,29 +40,32 @@ body {
         path{
             
             fill: $gray;
-        
+            opacity: 0.4;
             transition: all .3s linear;
         }
     }
 
     &.is-active{
         svg{
-            //background: blue;
-            height: 40px;
-            width: 40px;
-            
             path{
-                fill: #fbf5b1;
-                
+                opacity: 1;
             }
         }
     }
 }
-.app{
-    width: $w + (2*$space);
+.container{
+    max-width: $w + (2*$space);
+    width: 100%;
     min-height: 100dvh;
     //background: $black;
     margin: 0 auto;
     padding-inline: $space;
 }
 
+.nv{
+
+    width: 100%;
+    max-width: $w + (2*$space);
+    margin: 0 auto;
+    padding-inline: $space;
+}

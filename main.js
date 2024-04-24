@@ -9,9 +9,9 @@ new Splide(".splide", {
         pagination: "splide__pagination your-class-pagination splide_hidden",
         page: "splide__pagination__page your-class-page aa splide_hidden",
     },
-    perPage: 4,
+    perPage: 8,
     fixedHeight: "100px",
-    gap: 20,
+    gap: 15,
     type   : 'loop',
     drag   : 'free',
     focus  : 'center',
@@ -21,3 +21,12 @@ new Splide(".splide", {
         pauseOnHover:false
     },
 }).mount(window.splide.Extensions);
+
+
+const box_circle = document.querySelectorAll('.box_circle');
+
+
+box_circle?.forEach(item=>{
+    console.log(item.dataset.percent)
+    item.style.backgroundImage = `conic-gradient(rgb(159, 159, 159) ${item.dataset.percent}%, rgb(36, 36, 36) 0%)`;
+})

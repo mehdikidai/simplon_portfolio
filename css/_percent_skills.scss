@@ -1,0 +1,50 @@
+.percent_skills{
+    //background: red;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: $space * 4;
+    .box{
+        //background: blue;
+        display: flex;
+        flex-direction: column;
+        gap: $space;
+        &_circle{
+            width: 100%;
+            aspect-ratio: 1 !important;
+            background-image: conic-gradient(rgb(159, 159, 159) 0%, rgb(36, 36, 36) 0%);
+            clip-path: circle(50.0% at 50% 50%);
+            position: relative;
+            transform: rotate(90deg);
+            &::after{
+                content: attr(data-percent) " %";;
+                width:98%;
+                background: $black;
+                aspect-ratio: 1;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) rotate(-90deg);
+                clip-path: circle(50.0% at 50% 50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $gray;
+                font-size: 20px;
+                
+            }
+        }
+        &_tit{
+            height: 44px;
+            //background: greenyellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .name{
+                font-size: 16px;
+                color: $gray;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
