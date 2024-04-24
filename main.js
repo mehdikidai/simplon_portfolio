@@ -9,7 +9,7 @@ new Splide(".splide", {
         pagination: "splide__pagination your-class-pagination splide_hidden",
         page: "splide__pagination__page your-class-page aa splide_hidden",
     },
-    perPage: 8,
+    perPage: 6,
     fixedHeight: "100px",
     gap: 15,
     type   : 'loop',

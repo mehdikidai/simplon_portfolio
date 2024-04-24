@@ -8,7 +8,7 @@
     flex-direction: column;
     .nv {
         height: $h;
-        background: $black;
+        //background: $black;
         width: 100%;
         border-bottom: 1px solid #242424;
         display: flex;
@@ -27,8 +27,15 @@
         ul.list {
             display: flex;
             gap: $space;
+            justify-content: center;
+            align-items: center;
             span {
                 color: $gray;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                
             }
             li {
                 a {
@@ -71,6 +78,7 @@
                 object-fit: cover;
                 cursor: pointer;
                 transform: translateX(0);
+                filter: grayscale(60%);
                 transition: transform 0.3s ease-in-out;
             }
             span {
@@ -148,5 +156,34 @@
         background: #1a1a1a;
         border-top: 1px solid #242424;
         border-bottom: 1px solid #242424;
+        
+        & > section{
+           margin: 0 auto;
+            width: 100%;
+            max-width: $w;
+            position: relative;
+            &::after{
+                content: '';
+                height: 100%;
+                width: 20px;
+                background: #1a1a1a;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: linear-gradient(90deg, #1a1a1a 0%, #0000 100%);
+            }
+            &::before{
+                content: '';
+                height: 100%;
+                width: 20px;
+                background: #1a1a1a;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 5;
+                background: linear-gradient(-90deg, #1a1a1a 0%, #0000 100%);
+            }
+            //background: red;
+        }
     }
 }

@@ -16,6 +16,7 @@
             clip-path: circle(50.0% at 50% 50%);
             position: relative;
             transform: rotate(90deg);
+            transition: all .3s linear;
             &::after{
                 content: attr(data-percent) " %";;
                 width:98%;
