@@ -1,0 +1,67 @@
+@import "./globle";
+@import "./cover";
+@import "./txt_tittle";
+@import "./container_skills";
+
+:root{
+    --white-color: #fff;
+    --black-color: #161616;
+    --main-color: red;
+    --color-red: red;
+    --green-color: #25d952;
+    --gray-color: #9f9f9f;
+}
+
+
+body {
+	background-color: $black;
+	background-image: url(http://localhost:8080/img/bk.99034a8c.svg);
+	background-size: 300px;
+	background-attachment: fixed;
+}
+
+.splide_hidden{
+    display: none !important;
+}
+
+.splide__slide{
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid #242424;
+    
+    svg{
+        //background: blue;
+        height: 40px;
+        width: 40px;
+        path{
+            
+            fill: $gray;
+        
+            transition: all .3s linear;
+        }
+    }
+
+    &.is-active{
+        svg{
+            //background: blue;
+            height: 40px;
+            width: 40px;
+            
+            path{
+                fill: #fbf5b1;
+                
+            }
+        }
+    }
+}
+.app{
+    width: $w + (2*$space);
+    min-height: 100dvh;
+    //background: $black;
+    margin: 0 auto;
+    padding-inline: $space;
+}
+
