@@ -1,4 +1,5 @@
 @import "./globle";
+@import "./inc";
 
 .cover {
     width: 100%;
@@ -7,47 +8,26 @@
     display: flex;
     flex-direction: column;
     .nv {
-        height: $h;
-        //background: $black;
-        width: 100%;
-        border-bottom: 1px solid #242424;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-content: space-between;
-        a.email {
-            color: $gray;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            i {
-                font-size: 16px;
-            }
-        }
-        ul.list {
-            display: flex;
-            gap: $space;
-            justify-content: center;
-            align-items: center;
-            span {
-                color: $gray;
-                height: 50px;
-                display: flex;
-                align-items: center;
-                font-size: 12px;
-                
-            }
-            li {
-                a {
-                    color: $gray;
-                    text-transform: capitalize;
-                }
-            }
-        }
-        button.menu {
-            display: none;
-            visibility: hidden;
-        }
+       @extend %nv_and_footer;
+       position: relative;
+       svg{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%,8.5px);
+        width: 16px;
+        height: 16px;
+        color: #242424;
+       }
+       span.line{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%,1px);
+        height: 3px;
+        width: 12px;
+        background: $black;
+       }
     }
     .content {
         flex: 1;
@@ -92,7 +72,6 @@
             &:hover {
                 & img {
                     transform: translateX(10px);
-                    
                 }
 
                 & span {
@@ -106,9 +85,11 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            i {
-                font-size: 18px;
-                transform: translateY(1px);
+            svg {
+                width: 20px;
+                height: 20px;
+                transform: translateY(-1px);
+                //color: #ff9a51;
                 color: #fbf5b1;
             }
             span {
@@ -140,12 +121,12 @@
             color: $gray;
             cursor: pointer;
             border-radius: 6px;
-            i {
-                font-size: 18px;
+            svg {
+                width: 18px;
                 transform: translateY(1px);
                 transition: all 0.3s ease-in-out;
             }
-            &:hover i {
+            &:hover svg {
                 transform: translateY(1px) rotate(90deg);
             }
         }
@@ -156,14 +137,14 @@
         background: #1a1a1a;
         border-top: 1px solid #242424;
         border-bottom: 1px solid #242424;
-        
-        & > section{
-           margin: 0 auto;
+
+        & > section {
+            margin: 0 auto;
             width: 100%;
             max-width: $w;
             position: relative;
-            &::after{
-                content: '';
+            &::after {
+                content: "";
                 height: 100%;
                 width: 20px;
                 background: #1a1a1a;
@@ -172,8 +153,8 @@
                 top: 0;
                 background: linear-gradient(90deg, #1a1a1a 0%, #0000 100%);
             }
-            &::before{
-                content: '';
+            &::before {
+                content: "";
                 height: 100%;
                 width: 20px;
                 background: #1a1a1a;

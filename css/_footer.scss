@@ -1,0 +1,5 @@
+@import "./inc";
+.footer{
+    @extend %nv_and_footer;
+    border: none;
+}

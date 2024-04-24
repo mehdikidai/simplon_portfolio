@@ -1,0 +1,42 @@
+%nv_and_footer {
+    height: $h;
+    //background: $black;
+    width: 100%;
+    border-bottom: 1px solid #242424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    a.email {
+        color: $gray;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        i {
+            font-size: 16px;
+        }
+    }
+    ul.list {
+        display: flex;
+        gap: $space;
+        justify-content: center;
+        align-items: center;
+        span {
+            color: $gray;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+        }
+        li {
+            a {
+                color: $gray;
+                text-transform: capitalize;
+            }
+        }
+    }
+    button.menu {
+        display: none;
+        visibility: hidden;
+    }
+}

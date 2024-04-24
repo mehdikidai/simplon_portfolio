@@ -1,0 +1,44 @@
+.contact {
+    height: 425px;
+    //background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: $space * 2;
+    border-top: 1px solid #242424;
+    border-bottom: 1px solid #242424;
+    .icon {
+        svg {
+            width: 60px;
+            height: 60px;
+            color: $gray;
+        }
+    }
+    .text {
+        width: 80%;
+        max-width: 600px;
+        h3 {
+            font-size: 28px;
+            @extend %text_gradient;
+            text-align: center;
+        }
+    }
+    .btns {
+        display: flex;
+        gap: $space;
+        a {
+            height: 44px;
+            width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            border: 1px solid #242424;
+            background: #1a1a1a;
+            color: $gray;
+            text-transform: capitalize;
+            font-size: 16px;
+        }
+    }
+}
