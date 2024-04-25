@@ -80,18 +80,13 @@ window.addEventListener("load", () => {
         distance: "10px",
     });
 
-    ScrollReveal().reveal(".box_circle", {
+    ScrollReveal().reveal(".percent_skills", {
         delay: 500,
         duration: 500,
         origin: "left",
         distance: "0px",
     });
-    ScrollReveal().reveal(".box_tit", {
-        delay: 500,
-        duration: 500,
-        origin: "bottom",
-        distance: "10px",
-    });
+    
 
     ScrollReveal().reveal(".nv", {
         delay: 1000,
