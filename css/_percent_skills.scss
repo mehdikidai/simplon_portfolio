@@ -49,3 +49,30 @@
         }
     }
 }
+
+
+@include respond('phone'){
+    .percent_skills {
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        gap: $space*2 $space*1.5;
+    }
+    .percent_skills .box:nth-child(9){
+
+        //background: red !important;
+        grid-column: 2/3;
+
+    }
+    .percent_skills .box_circle::after {
+        width: 98%;
+        font-size: 12px;
+    }
+    .percent_skills .box_tit .name {
+        font-size: 12px;
+        text-align: center;
+    }
+    .percent_skills .box_tit {
+        height: 30px;
+    }
+}

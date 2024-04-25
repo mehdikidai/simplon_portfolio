@@ -1,0 +1,14 @@
+.loading{
+    height: 100dvh;
+    width: 100%;
+    background: $black;
+    z-index: 888;
+    inset: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+        color: $gray;
+    }
+}

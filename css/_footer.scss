@@ -3,3 +3,13 @@
     @extend %nv_and_footer;
     border: none;
 }
+
+@include respond('phone'){
+    .footer {
+        display: none;
+        .list{
+            display: none;
+            visibility: hidden;
+        }
+    }
+}

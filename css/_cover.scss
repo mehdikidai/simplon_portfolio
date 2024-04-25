@@ -168,3 +168,62 @@
         }
     }
 }
+
+
+@include respond('phone'){
+    .cover{
+        padding-bottom: $space;
+        .list{
+            display: none !important;
+            
+        }
+        .content .info_user h1 {
+            font-size: 22px; 
+        
+        }
+    }
+    .cover .content .name_user span {
+        font-size: 16px;
+    }
+    .cover .content button {
+        font-size: 14px;
+        width: 170px;
+        height: 40px;
+    }
+    .cover .content .photo_user {
+        width: 110px;
+        height: 110px;
+    }
+    .cover .slider {
+        height: 70px;
+        padding-block: 0; 
+        background: transparent;
+        border: none;
+    }
+    .splide__slide svg {
+        height: 25px !important;
+        width: 25px  !important;
+    }
+    .footer a.email, .cover .nv a.email {
+       font-size: 14px;
+       i{
+        transform: translateY(1px);
+        font-size: 14px;
+       }
+    }
+    .footer, .cover .nv {
+        height: 70px !important;
+    }
+    .cover .content .info_user {
+        width: 80%;
+    }
+    .footer, .cover .nv {
+        border: none !important;
+    }
+    .cover .nv svg,.cover .nv span.line {
+        display: none;
+    }
+    .footer a.email, .cover .nv a.email {
+        display: none !important;
+    }
+}

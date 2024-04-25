@@ -14,3 +14,12 @@
         @extend %text_gradient;
     }
 }
+
+@include respond('phone'){
+    .txt_tittle{
+        height: 120px;
+        h2{
+            font-size: 22px;
+        }
+    }
+}

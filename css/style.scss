@@ -5,6 +5,7 @@
 @import "./percent_skills";
 @import "./contact";
 @import "./footer";
+@import "./loading";
 
 :root{
     --white-color: #fff;
@@ -71,3 +72,9 @@ body {
     margin: 0 auto;
     padding-inline: $space;
 }
+
+
+*{
+    //border: 1px solid red !important;
+}
+
