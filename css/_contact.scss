@@ -27,7 +27,7 @@
     .btns {
         display: flex;
         gap: $space;
-        a {
+        a,button {
             height: 44px;
             width: 160px;
             display: flex;
@@ -39,12 +39,13 @@
             color: $gray;
             text-transform: capitalize;
             font-size: 16px;
+            cursor: pointer;
         }
     }
 }
 
 @include respond("phone") {
-    .contact .btns a {
+    .contact .btns a,.contact .btns button {
         height: 40px;
         width: 140px;
         font-size: 14px;

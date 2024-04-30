@@ -37,6 +37,22 @@
         justify-content: center;
         flex-direction: column;
         gap: $space * 1.5;
+        .txt_bg{
+            position: fixed;
+            font-size: 9rem;
+            line-height: 0.7;
+            text-align: center;
+            font-style: normal;
+            color: transparent;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%,120px);
+            z-index: -1;
+            font-weight: 900;
+            text-transform: uppercase;
+            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.028);
+            
+        }
         .photo_user {
             background: #1a1a1a;
             position: relative;
@@ -45,6 +61,8 @@
             border-radius: 50%;
             //overflow: hidden;
             border: 1px solid #242424;
+            //box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.02);
+            
             .photo_mask {
                 overflow: hidden;
                 //background: red;
@@ -173,12 +191,16 @@
 @include respond('phone'){
     .cover{
         padding-bottom: $space;
+        .content {
+            gap: 16px;
+        }
         .list{
             display: none !important;
             
         }
         .content .info_user h1 {
-            font-size: 22px; 
+            font-size: 20px; 
+            line-height: 1.4;
         
         }
     }
@@ -216,9 +238,6 @@
     }
     .cover .content .info_user {
         width: 80%;
-    }
-    .footer, .cover .nv {
-        border: none !important;
     }
     .cover .nv svg,.cover .nv span.line {
         display: none;

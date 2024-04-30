@@ -2,13 +2,13 @@
     //background: red;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: $space * 4;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: $space * 3;
     .box{
         //background: blue;
         display: flex;
         flex-direction: column;
-        gap: $space;
+        gap: $space * 0.5;
         &_circle{
             width: 100%;
             aspect-ratio: 1 !important;
@@ -19,7 +19,7 @@
             transition: all .3s linear;
             &::after{
                 content: attr(data-percent) " %";;
-                width:98%;
+                width:94%;
                 background: $black;
                 aspect-ratio: 1;
                 position: absolute;
@@ -31,12 +31,12 @@
                 align-items: center;
                 justify-content: center;
                 color: $gray;
-                font-size: 18px;
+                font-size: 16px;
                 
             }
         }
         &_tit{
-            height: 44px;
+            height: 36px;
             //background: greenyellow;
             display: flex;
             align-items: center;
@@ -55,17 +55,11 @@
     .percent_skills {
         height: auto;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr ;
-        gap: $space*2 $space*1.5;
-    }
-    .percent_skills .box:nth-child(9){
-
-        //background: red !important;
-        grid-column: 2/3;
-
+        grid-template-columns: 1fr 1fr 1fr ;
+        gap: $space*2 $space*1.0;
     }
     .percent_skills .box_circle::after {
-        width: 92%;
+        width: 96%;
         font-size: 12px;
     }
     .percent_skills .box_tit .name {
