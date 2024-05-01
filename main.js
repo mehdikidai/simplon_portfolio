@@ -33,10 +33,36 @@ const box_circle = document.querySelectorAll(".box_circle");
 const get_started = document.getElementById("get_started");
 const loading = document.getElementById("loading");
 
-box_circle?.forEach((item) => {
-    console.log(item.dataset.percent);
-    item.style.backgroundImage = `conic-gradient(rgb(159, 159, 159) ${item.dataset.percent}%, rgb(36, 36, 36) 0%)`;
+
+
+function addPercent(stop, el) {
+    let i = 0;
+    const st = setInterval(() => {
+        i++;
+        el.style.backgroundImage = `conic-gradient(rgb(159, 159, 159) ${i}%, rgb(36, 36, 36) 0%)`;
+        el.dataset.percent = String(i).padStart(2, "0");
+        if (i === Number(stop)) {
+            clearInterval(st);
+        }
+    }, 4000 / Number(stop));
+}
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            document.getElementById("percent_skills").classList.add("percent_skills_active")
+            box_circle?.forEach((item) => {
+                addPercent(item.dataset.percent, item);
+            });
+
+            observer.unobserve(entry.target);
+        }
+    });
 });
+
+observer.observe(document.getElementById("percent_skills"));
+
+
 
 window.addEventListener("load", () => {
     setTimeout(() => {
@@ -107,7 +133,6 @@ window.addEventListener("load", () => {
 });
 
 get_started.addEventListener("click", () => {
-
     window.scrollTo({
         top: window.document.documentElement.clientHeight,
         behavior: "smooth",
@@ -130,9 +155,8 @@ const inputMsg = document.querySelector('[name="msg"]');
 
 const input_el = document.querySelectorAll(".input_el");
 
-const menu_btn = document.getElementById('menu_btn')
-const list_ul = document.getElementById("list_ul")
-
+const menu_btn = document.getElementById("menu_btn");
+const list_ul = document.getElementById("list_ul");
 
 function reset() {
     form_box.classList.remove("form_box_show");
@@ -167,12 +191,7 @@ input_el.forEach((el) => {
     });
 });
 
-
-
 form_msg.addEventListener("submit", (e) => {
-
-    
-    
     e.preventDefault();
 
     const data = new FormData(form_msg);
@@ -182,9 +201,6 @@ form_msg.addEventListener("submit", (e) => {
     const vName = z_name.safeParse(dataObj["name"]);
     const vEmail = z_email.safeParse(dataObj["email"]);
     const vMsg = z_msg.safeParse(dataObj["msg"]);
-    
-
-
 
     vName.success ? null : inputName.classList.add("error");
 
@@ -192,19 +208,15 @@ form_msg.addEventListener("submit", (e) => {
 
     vMsg.success ? null : inputMsg.classList.add("error");
 
-
     if (vName.success && vEmail.success && vMsg.success) {
-
-        document.querySelector('[type="submit"]').innerHTML = iconLoad + "send"; 
+        document.querySelector('[type="submit"]').innerHTML = iconLoad + "send";
 
         data.append("id", "INCREMENT");
         data.append("date", "DATETIME");
-        
 
         axios
             .post("https://sheetdb.io/api/v1/i2sdrm7151ozf", data)
             .then((res) => {
-                
                 if (res.status === 201) {
                     input_el.forEach((el) => {
                         el.value = "";
@@ -224,15 +236,13 @@ form_msg.addEventListener("submit", (e) => {
     }
 });
 
+menu_btn.addEventListener("click", function (e) {
+    this.classList.toggle("active");
+    list_ul.classList.toggle("avtive");
+});
 
-menu_btn.addEventListener('click',function(e){
-    this.classList.toggle('active')
-    list_ul.classList.toggle('avtive')
-})
-
-document.querySelectorAll('.list > li > a').forEach(item=>{
-    item.addEventListener('click',()=>{
-        menu_btn.click()
-    })
-})
-
+document.querySelectorAll(".list > li > a").forEach((item) => {
+    item.addEventListener("click", () => {
+        menu_btn.click();
+    });
+});
