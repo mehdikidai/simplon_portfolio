@@ -34,12 +34,12 @@ const get_started = document.getElementById("get_started");
 const loading = document.getElementById("loading");
 
 
-
 function addPercent(stop, el) {
     let i = 0;
+    let main = "rgb(159, 159, 159)";
     const st = setInterval(() => {
         i++;
-        el.style.backgroundImage = `conic-gradient(rgb(159, 159, 159) ${i}%, rgb(36, 36, 36) 0%)`;
+        el.style.backgroundImage = `conic-gradient(${main} ${i}%, rgb(36, 36, 36) 0%)`;
         el.dataset.percent = String(i).padStart(2, "0");
         if (i === Number(stop)) {
             clearInterval(st);
@@ -50,19 +50,20 @@ function addPercent(stop, el) {
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            document.getElementById("percent_skills").classList.add("percent_skills_active")
-            box_circle?.forEach((item) => {
-                addPercent(item.dataset.percent, item);
-            });
 
+            entry.target.classList.add('box__active')
+            addPercent(entry.target.dataset.percent, entry.target);
             observer.unobserve(entry.target);
+
         }
     });
 });
 
-observer.observe(document.getElementById("percent_skills"));
+box_circle.forEach((element)=>{
+    observer.observe(element);
+})
 
-
+//observer.observe(document.getElementById("percent_skills"));
 
 window.addEventListener("load", () => {
     setTimeout(() => {
@@ -246,3 +247,22 @@ document.querySelectorAll(".list > li > a").forEach((item) => {
         menu_btn.click();
     });
 });
+
+
+const mouse = document.getElementById('mouse')
+
+window.addEventListener('mousemove',e =>{
+    mouse.style.top = `${e.clientY}px`
+    mouse.style.left = `${e.clientX}px`
+    ///console.log(e.clientY,`${e.clientX}px`)
+})
+
+const txt_bg = document.getElementById('txt_bg')
+
+window.addEventListener('scroll',(e)=>{
+
+    txt_bg.style.transform = `translate(-50%, 120px) scale(${(window.scrollY * 0.001) + 1})`;
+
+    console.log((window.scrollY * 0.001) + 1)
+
+})

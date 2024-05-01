@@ -19,7 +19,7 @@
             clip-path: circle(50% at 50% 50%);
             position: relative;
             transform: rotate(90deg);
-            transition: all 0.2s linear;
+            transition: background-image 0.3s ease-in-out;
             &::after {
                 content: attr(data-percent) " %";
                 width: 94%;
@@ -35,7 +35,7 @@
                 justify-content: center;
                 color: transparent;
                 font-size: 16px;
-                transition: all .4s ease .2s;
+                transition: all 0.4s ease 0.2s;
             }
         }
 
@@ -52,13 +52,10 @@
             }
         }
     }
-    &_active {
-        .box {
-            &_circle {
-                &::after {
-                    color: $gray;
-                }
-            }
+    
+    .box_circle{
+        &::after{
+            color: $gray;
         }
     }
 }

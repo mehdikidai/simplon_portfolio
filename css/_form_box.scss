@@ -63,7 +63,7 @@
                 //background: blue;
                 display: flex;
                 flex-direction: column;
-                gap: $space / 2;
+                gap: $space * 0.5;
                 input {
                     height: 40px;
                     padding-inline: 10px;
