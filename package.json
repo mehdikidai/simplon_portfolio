@@ -1,4 +1,5 @@
 {
+  "homepage": "https://mehdikidai.github.io/simplon_portfolio",
   "name": "portfolio_simplon_vite",
   "private": true,
   "version": "0.0.0",
@@ -6,9 +7,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "vite": "^5.2.0"
   },
   "dependencies": {
