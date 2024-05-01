@@ -161,14 +161,10 @@ const list_ul = document.getElementById("list_ul");
 
 function reset() {
     form_box.classList.remove("form_box_show");
-    document.querySelector("html").style.height = "auto";
-    document.querySelector("html").style.overflow = "auto";
 }
 
 btn_form.addEventListener("click", () => {
     form_box.classList.add("form_box_show");
-    document.querySelector("html").style.height = "100vh";
-    document.querySelector("html").style.overflow = "hidden";
 });
 
 form_box.addEventListener("click", (el) => {
@@ -251,10 +247,14 @@ document.querySelectorAll(".list > li > a").forEach((item) => {
 
 const mouse = document.getElementById('mouse')
 
-window.addEventListener('mousemove',e =>{
-    mouse.style.top = `${e.clientY}px`
-    mouse.style.left = `${e.clientX}px`
-    ///console.log(e.clientY,`${e.clientX}px`)
+window.addEventListener('mousemove',(e)=>{
+    
+    mouse.animate({
+        left:`${e.clientX}px`,
+        top:`${e.clientY}px`
+    },{duration:500,fill:'forwards'});
+
+    
 })
 
 const txt_bg = document.getElementById('txt_bg')
@@ -262,6 +262,7 @@ const txt_bg = document.getElementById('txt_bg')
 window.addEventListener('scroll',(e)=>{
 
     txt_bg.style.transform = `translate(-50%, 120px) scale(${(window.scrollY * 0.001) + 1})`;
+
 
     console.log((window.scrollY * 0.001) + 1)
 
