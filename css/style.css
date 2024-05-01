@@ -287,7 +287,6 @@ li {
 .cover .content .txt_bg {
   position: fixed;
   font-size: 9rem;
-  line-height: 0.7;
   text-align: center;
   font-style: normal;
   color: transparent;
@@ -297,7 +296,8 @@ li {
   z-index: -1;
   font-weight: 900;
   text-transform: uppercase;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.028);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.02);
+  pointer-events: none;
 }
 .cover .content .photo_user {
   background: #1a1a1a;
@@ -474,6 +474,9 @@ li {
     display: none;
   }
   .footer a.email, .cover .nv a.email {
+    display: none !important;
+  }
+  .cover .content .txt_bg {
     display: none !important;
   }
 }

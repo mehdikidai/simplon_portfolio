@@ -204,7 +204,7 @@ form_msg.addEventListener("submit", (e) => {
         axios
             .post("https://sheetdb.io/api/v1/i2sdrm7151ozf", data)
             .then((res) => {
-                //console.log(res);
+                
                 if (res.status === 201) {
                     input_el.forEach((el) => {
                         el.value = "";
