@@ -1,0 +1,18 @@
+@import "./globle";
+.scroll_progress{
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: transparent;
+    .progress{
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background: $gray;
+        transition: all .6s ease-out;
+    }
+}

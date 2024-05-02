@@ -258,12 +258,19 @@ window.addEventListener('mousemove',(e)=>{
 })
 
 const txt_bg = document.getElementById('txt_bg')
+const scroll_progress = document.getElementById('s_progress')
+const wdd = window.document.documentElement
+
+const hs = wdd.offsetHeight - wdd.clientHeight
 
 window.addEventListener('scroll',(e)=>{
 
+    
+
     txt_bg.style.transform = `translate(-50%, 120px) scale(${(window.scrollY * 0.001) + 1})`;
+    
+    scroll_progress.style.width = `${(window.scrollY / hs) * 100}%`
 
-
-    console.log((window.scrollY * 0.001) + 1)
+    console.log( (window.scrollY / hs) * 100)
 
 })
