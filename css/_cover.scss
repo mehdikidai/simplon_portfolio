@@ -7,6 +7,7 @@
     //background: blue;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     .nv {
        @extend %nv_and_footer;
        position: relative;
@@ -123,6 +124,7 @@
                 font-size: 32px;
                 line-height: 1.2;
                 text-align: center;
+                position: relative;
                 @extend %text_gradient;
             }
         }
@@ -140,6 +142,7 @@
             color: $gray;
             cursor: pointer;
             border-radius: 6px;
+            position: relative;
             svg {
                 width: 18px;
                 transform: translateY(1px);

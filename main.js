@@ -261,13 +261,23 @@ const txt_bg = document.getElementById('txt_bg')
 const scroll_progress = document.getElementById('s_progress')
 const wdd = window.document.documentElement
 
+const text_h1 = document.getElementById('text_h1')
+
 const hs = wdd.offsetHeight - wdd.clientHeight
 
 window.addEventListener('scroll',(e)=>{
 
-    
 
     txt_bg.style.transform = `translate(-50%, 120px) scale(${(window.scrollY * 0.001) + 1})`;
+
+    //text_h1.style.left = `${window.scrollY}px`
+    text_h1.animate({
+        left:`${window.scrollY * 0.3}px`,
+    },{duration:900,fill:'forwards'});
+
+    get_started.animate({
+        left:`${-window.scrollY * 0.3}px`,
+    },{duration:900,fill:'forwards'});
     
     scroll_progress.style.width = `${(window.scrollY / hs) * 100}%`
 
