@@ -1,6 +1,6 @@
 import "./css/style.scss";
 import ScrollReveal from "scrollreveal";
-import { z } from "zod";
+import { date, z } from "zod";
 import axios from "axios";
 
 new Splide(".splide", {
@@ -284,3 +284,4 @@ window.addEventListener('scroll',(e)=>{
     console.log( (window.scrollY / hs) * 100)
 
 })
+

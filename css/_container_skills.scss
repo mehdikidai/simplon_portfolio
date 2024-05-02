@@ -13,7 +13,7 @@
         align-items: start;
         justify-content: end;
         flex-direction: column;
-        padding: 100px 30px 45px;
+        padding: 130px 30px 45px;
         gap: 16px;
         box-shadow: rgba(0, 0, 0, 0.05) 3px 0px 3px;
         transform: translateY(0);
@@ -38,12 +38,12 @@
             }
             
         }
-        &:hover .icon{
-            rotate: 10deg;
-            svg{
-                color: #fbf5b1;
-            }
-        }
+        // &:hover .icon{
+        //     rotate: 10deg;
+        //     svg{
+        //         color: #fbf5b1;
+        //     }
+        // }
         .tit {
             font-size: 24px;
             font-weight: 500;
