@@ -1,6 +1,6 @@
 import "./css/style.scss";
 import ScrollReveal from "scrollreveal";
-import { date, z } from "zod";
+import { z } from "zod";
 import axios from "axios";
 
 new Splide(".splide", {
@@ -65,7 +65,7 @@ box_circle.forEach((element)=>{
 
 //observer.observe(document.getElementById("percent_skills"));
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         loading.remove();
     }, 1000);
@@ -138,7 +138,7 @@ get_started.addEventListener("click", () => {
         top: window.document.documentElement.clientHeight,
         behavior: "smooth",
     });
-    console.log(window.document.documentElement.clientHeight);
+    //console.log(window.document.documentElement.clientHeight);
 });
 
 const iconSend = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m14 10l-3 3m9.288-9.969a.535.535 0 0 1 .68.681l-5.924 16.93a.535.535 0 0 1-.994.04l-3.219-7.242a.534.534 0 0 0-.271-.271l-7.242-3.22a.535.535 0 0 1 .04-.993z"/></svg>`;
@@ -222,7 +222,7 @@ form_msg.addEventListener("submit", (e) => {
                         iconOk + "send";
                 }
             })
-            .catch((err) => {})
+            .catch(() => {})
             .finally(() => {
                 setTimeout(() => {
                     document.querySelector('[type="submit"]').innerHTML =
@@ -265,12 +265,11 @@ const text_h1 = document.getElementById('text_h1')
 
 const hs = wdd.offsetHeight - wdd.clientHeight
 
-window.addEventListener('scroll',(e)=>{
+window.addEventListener('scroll',()=>{
 
 
     txt_bg.style.transform = `translate(-50%, 120px) scale(${(window.scrollY * 0.001) + 1})`;
 
-    //text_h1.style.left = `${window.scrollY}px`
     text_h1.animate({
         left:`${window.scrollY * 0.3}px`,
     },{duration:900,fill:'forwards'});
@@ -281,7 +280,7 @@ window.addEventListener('scroll',(e)=>{
     
     scroll_progress.style.width = `${(window.scrollY / hs) * 100}%`
 
-    console.log( (window.scrollY / hs) * 100)
+    //console.log( (window.scrollY / hs) * 100)
 
 })
 
